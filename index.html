@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/index.css" />
+  <script src="http://cdn.sucai8.cn/cdn/jquery/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+  <header>
+    <img src="./images/nav.png" alt="" class="header-nav" />
+  </header>
+  <!-- <div> -->
+  <!-- <canvas></canvas> -->
+  <div class="screen-wrap">
+    <!-- <img /> -->
+    <video autoplay muted loop class="video-style" id="video">
+      <source src="./videos/video_clock.mp4" type="video/mp4">
+      </source>
+    </video>
+    <!-- <video autoplay muted loop class="video-style">
+      <source src="./videos/video_wasteland.mp4" type="video/mp4">
+      </source>
+    </video> -->
+  </div>
+  <!-- </div> -->
+  <main class="main">
+    <section class="channel-numbers" id="channel-image">
+      <span class="number-wrap">
+        <img src="./images/image_clock.png" alt="" class="image" />
+      </span>
+      <span class="number-wrap">
+        <img src="./images/image_wasteland.png" alt="" />
+      </span>
+    </section>
+  </main>
+  <footer></footer>
+
+  <script>
+    $(document).ready(function () {
+      $(".screen-wrap .video-style").on({
+        mouseover: function () {
+          $(this).attr('src', './videos/video_clock.mp4')
+        },
+        mouseout: function () {
+          $(this).attr('src', './videos/video_wasteland.mp4')
+        }
+      })
+    })
+
+    $(".channel-numbers .number-wrap").hover(function () {
+      $(".channel-numbers .number-wrap").removeClass("active");
+      $(this).addClass("active");
+    })
+  </script>
+</body>
+
+</html>
