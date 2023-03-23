@@ -1,23 +1,86 @@
+@font-face {
+  font-family: "font-mono";
+  src: url("../font/VCR_OSD_MONO_1.001.ttf");
+}
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "font-mono";
+  color: floralwhite;
 }
 
-body,html{
+body, html{
   height: 100%;
-  width:100%;
+  width:100%; 
   overflow:hidden;
   position: relative;
-
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "salt" on,"ss01" on,"ss02" on;
 }
 
-.header-nav{
-  width: 100%;
-  display: block;
+.site-header{
+  padding: 0 20px;
+  height: 50px;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.site-header > .text-left{
+  margin-right: auto;
+}
+
+.site-header > .text-hover{
+  padding: 2px;
+  margin-right: 20px;
+}
+.site-header > .text-hover:hover{
+  color: black;
+  background-color: floralwhite;
+}
+
+.site-header > .menu-item{
+  overflow: hidden;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 2px;
+}
+
+.site-header > .menu-item:last-child{
+  margin-right: 20px;
+}
+
+.site-header > .menu-item > input {
+  background: transparent;
+  box-sizing: border-box;
+  z-index: 4;
+  text-transform: uppercase;
   position: relative;
-  z-index: 6;
+  height: 26px;
+  outline: none;
+  border-color: darkgray;
 }
+
+.site-header > .menu-item > button {
+  position: absolute;
+  top: 12px;
+  right: 42px;
+  width: 26px;
+  height: 26px;
+  z-index: 5;
+  display: block;
+  background: transparent;
+  cursor: pointer;
+  border-color: darkgray;
+}
+
 .screen-wrap{  
   width: 100%;
   height: 100%;
